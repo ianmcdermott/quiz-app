@@ -1,0 +1,444 @@
+html{
+  box-sizing: border-box;
+  width:100%;
+  height: 100%;
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Josefin Slab', serif;
+  width: 100%;
+  max-height: 100%;
+  
+}
+
+.final-page div{
+  float: left;
+}
+
+.wrapper{
+  width : 1200px;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: initial;
+  border: 30px solid #000;
+}
+
+li{
+  list-style: none;
+}
+
+form{
+  margin-top: 30px;
+}
+
+
+header, div{
+  border: 15px solid black;
+  padding: 15px;
+}
+
+
+.start-page, .question-page, .final-page{
+  clear: both;
+}
+
+
+
+.start-page{
+  float: left;
+  position: relative;
+  padding: 0;
+  height:  870px;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.start-info{
+  width: 60%;
+  height: 30%;
+  color: #fff;
+  background-color: #00f;
+  float: left;
+  position: relative;
+  font-size: 30px;
+
+}
+
+.start-btn-div{
+  width: 20%;
+  height: 20%;
+  font-size: 50px;
+  background-color: #f00; 
+  float: left;
+  font-family: "Josefin Slab" serif ;
+
+}
+
+.js-start-btn{
+  background-color: inherit;
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  font-size: 1em;
+  padding: 0;
+  margin: 0 auto;
+  display: block;
+}
+
+
+.js-feedback{
+  display: none;
+}
+
+.next-question{
+  background-color: inherit;
+}
+
+.submit, .submit-btn, .next-question-btn, .see-results-btn{
+  background-color: #ff0;
+  padding: 0;
+}
+
+.submit-btn, .next-question-btn, .see-results-btn{
+  font-size: 50px;
+  font-family: "Josefin Slab", serif;
+  height: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.submit-btn{
+  background-color: inherit;
+  width: 100%;
+}
+
+.next-question-btn{
+  font-size: 45px;
+  width: 100%;
+  background-color: inherit;
+}
+
+button{
+  border: none;
+  display: inline;
+}
+
+header{
+  width: 40%;
+  height: 100%;
+  position: relative;
+  float: left;
+  font-size: 50px;
+  padding-top: 0;
+}
+
+.js-banner{
+  position: relative;
+  font-size: 90px;
+  margin-left: 20px;
+
+}
+
+.question{
+  width: 60%;
+  height: 30%;
+  float: left;
+  position: relative;
+}
+
+.question p{
+  font-size: 50px;
+  bottom: 0;
+  position: absolute;
+}
+
+.answers{
+  width: 80%;
+  height: 80%;
+  background-color: #00f;
+  color: #fff;
+  padding: 0;
+}
+
+.answer{
+  font-size: 30px;
+  line-height: 220%;
+}
+
+.feedback-div{
+  background-color: #fff;
+  color: #000;
+  font-size: 50px;
+  padding: 0;
+  position: relative;
+  
+}
+
+legend{
+  display: none;
+}
+
+fieldset{
+  border-style: none;
+  padding: 0px;
+  margin: 0;
+}
+
+.fieldset-answers{
+  padding: 0px;
+}
+
+.current-score-div{
+  background-color: #fff;
+}
+
+.current-question-div{
+  background-color: #f00;  
+}
+
+input{
+  margin: 0;
+}
+
+
+
+main{
+  clear: both;
+  position: relative;
+  height: 650px;
+  top: -650px;
+  
+}
+
+.main-class{
+  display: none;
+  z-index: 1;
+}
+
+.yellow-block{
+  background-color: #ff0;
+  position: relative;
+  width: 40%;
+  height: 20%;
+  float: left;
+  
+}
+.white-block{
+  background-color: #fff;
+  height: 20%;
+  width: 60%;
+  float: left;
+}
+
+.blue-block{
+  background-color: #00f;
+}
+
+.red-block{
+  background-color: #f00;
+}
+
+.feedback-div{
+  position: absolute;
+  right: 0;
+  width: 20%;
+  height: 40%;
+  top:0;
+  text-align: center;
+}
+
+.feedback-div span{
+  font-size: 75px; 
+  text-align: center;
+}
+
+.submit{
+  position: absolute;
+  top: 40%;
+  right: 0;
+  width: 20%;
+  height: 40%;
+}
+
+.current-question-div, .current-score-div{
+  height: 20%;
+  width: 50%;
+  font-family: 'Josefin Slab', serif;
+  padding: 0;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.current-question-div p, .current-score-div p{
+  text-align: center;
+  padding: 0;
+  font-size: 50px;
+
+}
+
+.try-again-pad{
+  clear:both;
+  width: 50%;
+  height: 9.090909091%;
+}
+
+.try-again-div{
+  width: 50%;
+  height: 9.090909091%;
+  font-family: 'Josefin Slab', serif;
+  background-color: #ff0;
+  padding: 20px 0;
+  
+}
+
+.try-again-btn{
+  font-family: inherit;
+  background-color: inherit;
+  font-size: 50px;
+  text-align: center;
+  display: inline-block;
+  height: 100%;
+  width: 99%;
+}
+
+.js-try-again{
+  height: 100%;
+}
+
+.js-result-color{
+  background-color: #fff;
+}
+.js-results{
+  
+}
+
+.col-10{
+  width: 83.3334%;
+  height: 9.090909091%;
+}
+
+.col-2{
+  width: 16.6667%;
+  height: 9.090909091%;
+}
+
+.final-page{
+  padding: 0;
+  height: 2200px;
+  width: 100%;
+  top: -3600px;
+  position: relative;
+  z-index: 0;
+  display: none;
+}
+
+
+.results{
+  font-size: 30px;
+}
+
+.results p:first-child{
+  font-size: 20px;
+  padding-top: 1%;
+}
+
+.js-feedback-div{
+  font-size: 0;
+   padding: 0;
+  margin: 0 auto;
+  color: #000;
+    display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.js-feedback-div p{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.left-bar{
+  border: none;
+  height: 100%;
+}
+
+.bar{
+  background-color: #000;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 15px;
+  border: none;
+}
+
+.highlight{
+  background-color: #fff;
+  width: 100%;
+  color: #000 !important;
+  padding: 4px 0 4px 30px;
+  display: inline-block;
+  border: 15px solid black;
+  border-left: 0;
+  border-right: 0;
+
+}
+
+input{
+}
+
+input[type='radio'] {
+  -webkit-appearance:none;
+  width:100%;
+  height:16.6666667%;
+  outline:none;
+  position: absolute;
+}
+
+input[type='radio']:hover, input[type='radio']:focus {
+  background-color: inherit;
+  width: 100%;
+  color: #000;
+  padding: 8px 0 4px 30px;
+  display: inline-block;
+  border: 15px solid black;
+  border-left: 0;
+  border-right: 0;
+}
+
+input[type='radio']:checked{
+  background-color: inherit;
+  width: 100%;
+  color: #000;
+  padding: 8px 0 4px 30px;
+  display: inline-block;
+  border: 15px solid black;
+  border-left: 0;
+  border-right: 0;
+}
+
+
+label{
+  background-color: inherit;
+  width: 100%;
+  color: #fff;
+  padding: 4px 0 4px 15px;
+  display: inline-block;
+  border: 15px solid transparent;
+
+}
+
+.hideRadioButton{
+ 
+}
+

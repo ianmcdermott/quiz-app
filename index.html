@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta property="description" content="Test your knowledge of the De Stijl Movement!">
+    <title>THE DE STIJL QUIZ</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet"> 
+    <link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper">
+<!-- START PAGE -->
+      <div class="start-page"> 
+      <header role="banner"><h1 class="js-banner">THE<br>DE STIJL<br>QUIZ</h1></header>
+        <div class="start-info"><p>Test Your Knowledge of the De Stijl art movement</p></div>
+        <div class="start-btn-div"><button type="submit" value="Start" role="button" class ="js-start-btn"><strong>START</strong></button></div>
+        <div class="yellow-block"></div>
+        <div class="white-block"></div>
+        <div class="question js-question"></div>
+       </div> 
+
+     
+<!-- QUESTION PAGE -->
+        <main role="main" class="main-class">
+          <div class="answers" role="radiogroup">
+            <form method="post">
+              <fieldset name="answers" style="padding: 0">
+                <legend style="display: none">Answers:</legend>
+                      <input type="radio" name="answer" id="answer-1" required value="1" aria-pressed="false"/>
+                        <label for="answer-1"  class="answer answer-1 hover-class" ></label><br>
+                      <input type="radio" name="answer" id="answer-2" value="2" aria-pressed="false"/>
+                        <label for="answer-2" class="answer answer-2 hover-class"></label><br>
+                      <input type="radio" name="answer" id="answer-3" value="3" aria-pressed="false"/>
+                        <label for="answer-3"  class="answer answer-3 hover-class"></label><br>
+                      <input type="radio" name="answer" id="answer-4" value="4" aria-pressed="false"/>
+                        <label for="answer-4" class="answer answer-4 hover-class"></label><br>
+                  
+              </fieldset>
+            </form>
+          </div>
+        
+<!-- FEEDBACK SECTION - Correct/Wrong Answer will show in div above submit button -->
+          <div class="feedback-div js-feedback-div">
+            <p class="correct"><span class="js-feedback"></span></p>
+          </div>
+          <div class="submit">
+            <button type="submit" value="Submit" role="button" class="submit-btn" aria-pressed="false"><p class="js-submit-text">Submit</p></button>
+          </div>
+          
+          
+          <div class="current-question-div">
+            <p><strong>Current Question <span class="js-current-question">1</span> || 10</strong></p>
+          </div>
+          <div class="current-score-div">
+            <p><strong>Current Score <span class="js-current-score">0</span> || 10</strong></p>
+          </div>
+        </main>  
+    
+<!-- FINAL PAGE--> 
+      <div class="final-page">
+        <div class="js-result-color col-2"></div>
+        <div class="js-results results col-10"></div>
+        
+        <div class="js-results results col-10"></div>
+        <div class="js-result-color col-2"></div>
+        
+        <div class="js-result-color col-2"></div>
+        <div class="js-results results col-10"></div>
+        
+        <div class="js-results results col-10"></div>
+        <div class="js-result-color col-2"></div>
+        
+        <div class="js-result-color col-2"></div>
+        <div class="js-results results col-10"></div>
+        
+        <div class="js-results results col-10"></div>
+        <div class="js-result-color col-2"></div>
+     
+        <div class="js-result-color col-2"></div>
+        <div class="js-results results col-10"></div>
+        
+        <div class="js-results results col-10"></div>
+        <div class="js-result-color col-2"></div>
+        
+        <div class="js-result-color col-2"></div>
+        <div class="js-results results col-10"></div>
+        
+        <div class="js-results results col-10"></div>
+        <div  class="js-result-color col-2"></div>
+
+        <div class="try-again-pad"></div>
+        <div class="try-again-div"><button type="submit" value="Try Again" role="button" class="js-try-again try-again-btn" aria-pressed="false">TRY AGAIN</button></div>
+      </div>
+
+
+      
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
