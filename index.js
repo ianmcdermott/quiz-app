@@ -1,4 +1,4 @@
-/////// GLOBAL VARIABLES ///////  
+/////// VARIABLES ///////  
 
 let currentQuestion = 0;
 let nextQuestion = false;
@@ -13,77 +13,78 @@ const PLAYER_ANSWERS = [];
 const INFO = [
   {question:  "Which description sounds closest to De Stijl art?",
    answer:    ["Photorealistic representation",
-     	         "Geometric abstraction, hard lines, primary colors",
-     	         "Pop culture images with a graphic quality",
-     	         "Dreamlike imagery" ],
+               "Geometric abstraction, hard lines, primary colors",
+               "Pop culture images with a graphic quality",
+               "Dreamlike imagery" ],
    correctIndex: 1 
   },
 
   {question:      "Name artistic some influences of De Stilj.",
     answer:      ["Bauhaus, Suprematism, and Russian Constructivism",
-		          "Rococo, Neoclassicism",
-		          "Surrealism, Hyperrealism, Magical Realism",
-		          "Romanticism, Symbolism, Impressionism"],
+              "Rococo, Neoclassicism",
+              "Surrealism, Hyperrealism, Magical Realism",
+              "Romanticism, Symbolism, Impressionism"],
     correctIndex: 0},
    
   {question:     "What years did the De Stijl movement take place?",
     answer:     ["1802-1853 BCE",
-		         "1917-1931 BCE",
-		         "1950-1972 BCE",
-		         "1642-1683 BCE"],
+             "1917-1931 BCE",
+             "1950-1972 BCE",
+             "1642-1683 BCE"],
     correctIndex: 1},
    
   {question:    "Who were the founders of the De Stijl movement?",
    answer:     ["Donatello, Leonardo, Michelangelo, and Raphael",
-		            "Pablo Picasso, Henri Matisse, and Georges Braque",
-		            "William Blake and Samuel Palmer", 
-		            "Theo van Doesburg, Piet Mondrian, and Gerrit Reitveld."],
+                "Pablo Picasso, Henri Matisse, and Georges Braque",
+                "William Blake and Samuel Palmer", 
+                "Theo van Doesburg, Piet Mondrian, and Gerrit Reitveld."],
    correctIndex : 3},
    
   {question:      "Where was the De Stijl movement founded?",
    answer:       ["The Netherlands",
-		          "The United States",
-		          "Russia",
- 		          "Hungary"],
+              "The United States",
+              "Russia",
+              "Hungary"],
    correctIndex : 0},
    
   {question      :  "The artistic philosophy that formed a basis for the De Stijl movement’s work is known as:", 
    answer:       ["neoplasticism",
-		          "neoplatonism",
-		          "neologism",
-		          "nepotism"],
+              "neoplatonism",
+              "neologism",
+              "nepotism"],
    correctIndex : 0},
    
   {question:       "Name a medium utilized in the De Stijl movement.",
    answer:        ["Film",
-		           "Music",
-		           "Furniture Design",
-		           "Dance"],
+               "Music",
+               "Furniture Design",
+               "Dance"],
    correctIndex : 2},
    
-  {question:  	"Which sounds most like a De Stijl color palette?",
-   answer: 		["Neon Pink, orange and yellow",
-    		    "Red, Yellow, Blue, Black",
-		        "Purple, Green, Orange",
-		        "Monochromatic Purple"],
+  {question:    "Which sounds most like a De Stijl color palette?",
+   answer:    ["Neon Pink, orange and yellow",
+            "Red, Yellow, Blue, Black",
+            "Purple, Green, Orange",
+            "Monochromatic Purple"],
    correctIndex:1},
    
   {question:    "Name a building that follows De Stijl Principles.",
    answer:     ["The Parthenon",
-		        "The White House",
-		        "The Rietveld Schröder House",
-		        "The House of the Rising Sun"],
+            "The White House",
+            "The Rietveld Schröder House",
+            "The House of the Rising Sun"],
    correctIndex:2},
    
   {question:    "The English translation of “De Stijl” is:",
    answer:     ["Be Still",
-		        "The Style",
-		        "Of Strigil",
-		        "Pig Sty"],
+            "The Style",
+            "Of Strigil",
+            "Pig Sty"],
    correctIndex:1}
 ];
 
 
+/////// Processing ///////
 
 function randomizeQuestions(questionArray){
   //Randomize the items in the INFO object returns a new array
@@ -125,51 +126,6 @@ function updateQandA(index){
   }
 }
 
-function highlightAnswer(correctAnswer){
-  //Highlights the correct answer after user submits
-  $(".answer").removeClass("highlight");
-  $(`.answer-${(correctAnswer+1)}`).addClass("highlight");
-}
-  
-function updateFeedback(outcome, correctAnswer){
-   //function that updates feedback box, colors div with red/blue based on wrong/right 
-
-   //disable other radio buttons from being clickable
-   $("input[name='answer']").prop("disabled", true); 
-
-   if(outcome){
-     currentScore++;
-     renderCorrect(correctAnswer);
-  } else if(outcome === false){
-     renderIncorrect(correctAnswer);
-  }
-}    
-
-function renderCorrect(correctAnswer){
-  //handles render when user answer is correct
-  $("input[name='answer']").prop('checked',false);
-  $(".js-feedback-div").css("background-color" , "#00f");
-  $(".js-feedback-div").css("color" , "#fff");
-  $(".js-feedback-div").html(`Correct Answer:<br>${correctAnswer+1}.`);
-  $(".answers").css("background-color" , "#ff0"); 
-  $(".answer").css("color" , "#ff0");     
-  $(".js-current-score").html(currentScore);
-  $(".answer").removeClass("highlight");
-  highlightAnswer(correctAnswer);
-}
-
-function renderIncorrect(correctAnswer){
-  //handles render when user answer is incorrect
-  $("input[name='answer']").prop('checked',false);
-  $(".answers").css("background-color" , "#f00");
-  $(".js-feedback-div").css("background-color" , "#f00");
-  $(".js-feedback-div").css("color" , "#fff");
-  $(".js-feedback-div").html(`Correct Answer:<br>${correctAnswer+1}.`);
-  $(".answer").css("color" , "#f00");     
-  $(".answer").removeClass("highlight");
-  $(`.answer-${(correctAnswer+1)}`).addClass("highlight"); 
-}
-
 function resetQuestions(){
   //Handles all resets after Try Again Button is clicked
   //Clear most global variables
@@ -195,6 +151,16 @@ function clearResults(){
    $(".js-results").html("");
 }
 
+function processAnswers(userInput){
+  PLAYER_ANSWERS.push(userInput);
+  outcome = compareAnswer(parseInt(INFO[currentQuestion].correctIndex),
+                            PLAYER_ANSWERS[PLAYER_ANSWERS.length-1]-1);
+  outcomes.push(outcome);
+  updateFeedback(outcome, INFO[currentQuestion].correctIndex);
+}
+
+
+////// BUTTONS ////// 
 function tryAgain(){
   //click try again to restart game
   $(".js-try-again").on("click", function(event){
@@ -206,14 +172,6 @@ function tryAgain(){
   }) 
 }
 
-function submitAnswerMessage(){
-  //Adds message if player doesn't submit answer
-  $(".js-feedback-div").css("background-color" , "#ff0");
-  $(".js-feedback-div").css("color" , "#000");
-  $(".js-feedback-div").html("<p>Please make a selection</p>");
-}
-
-////// BUTTONS ////// 
 function startGame(){
   //Start game function by clicking start button
   $(".js-start-btn").click(event => {
@@ -292,6 +250,60 @@ function submitButton(){
   });
 }
 
+
+////// RENDERING //////
+function highlightAnswer(correctAnswer){
+  //Highlights the correct answer after user submits
+  $(".answer").removeClass("highlight");
+  $(`.answer-${(correctAnswer+1)}`).addClass("highlight");
+}
+
+function updateFeedback(outcome, correctAnswer){
+   //function that updates feedback box, colors div with red/blue based on wrong/right 
+
+   //disable other radio buttons from being clickable
+   $("input[name='answer']").prop("disabled", true); 
+
+   if(outcome){
+     currentScore++;
+     renderCorrect(correctAnswer);
+  } else if(outcome === false){
+     renderIncorrect(correctAnswer);
+  }
+}    
+
+function submitAnswerMessage(){
+  //Adds message if player doesn't submit answer
+  $(".js-feedback-div").css("background-color" , "#ff0");
+  $(".js-feedback-div").css("color" , "#000");
+  $(".js-feedback-div").html("<p>Please make a selection</p>");
+}
+
+function renderCorrect(correctAnswer){
+  //handles render when user answer is correct
+  $("input[name='answer']").prop('checked',false);
+  $(".js-feedback-div").css("background-color" , "#00f");
+  $(".js-feedback-div").css("color" , "#fff");
+  $(".js-feedback-div").html(`Correct Answer:<br>${correctAnswer+1}.`);
+  $(".answers").css("background-color" , "#ff0"); 
+  $(".answer").css("color" , "#ff0");     
+  $(".js-current-score").html(currentScore);
+  $(".answer").removeClass("highlight");
+  highlightAnswer(correctAnswer);
+}
+
+function renderIncorrect(correctAnswer){
+  //handles render when user answer is incorrect
+  $("input[name='answer']").prop('checked',false);
+  $(".answers").css("background-color" , "#f00");
+  $(".js-feedback-div").css("background-color" , "#f00");
+  $(".js-feedback-div").css("color" , "#fff");
+  $(".js-feedback-div").html(`Correct Answer:<br>${correctAnswer+1}.`);
+  $(".answer").css("color" , "#f00");     
+  $(".answer").removeClass("highlight");
+  $(`.answer-${(correctAnswer+1)}`).addClass("highlight"); 
+}
+
  function renderCurrentQuestion(){
   //renders the current question in lower div
     if(currentQuestion <= 10){
@@ -327,22 +339,12 @@ function seeResults(){
 
 }
 
-function processAnswers(userInput){
-  PLAYER_ANSWERS.push(userInput);
-  outcome = compareAnswer(parseInt(INFO[currentQuestion].correctIndex),
-                            PLAYER_ANSWERS[PLAYER_ANSWERS.length-1]-1);
-  outcomes.push(outcome);
-  updateFeedback(outcome, INFO[currentQuestion].correctIndex);
-}
-
-
 function handleQuiz(){
  startGame();
  nextQuestionButton();
  submitButton();
  tryAgain();
 }
-
 
 $(handleQuiz);
 
