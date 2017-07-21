@@ -69,8 +69,12 @@ header, div{
   float: left;
   position: relative;
   font-size: 30px;
-
 }
+
+.start-info p{
+ 	margin-top: 155px;
+}
+
 
 .start-btn-div{
   width: 20%;
@@ -79,7 +83,7 @@ header, div{
   background-color: #f00; 
   float: left;
   font-family: "Josefin Slab" serif ;
-
+  padding: 0;
 }
 
 .js-start-btn{
@@ -92,6 +96,14 @@ header, div{
   margin: 0 auto;
   display: block;
 }
+.js-start-btn:hover, .js-start-btn:focus{
+  background-color: #00f;
+  box-shadow: 0 0 5px 5px #ff0;
+}
+
+.js-start-btn:active{
+  background-color: #ff0;
+}
 
 
 .js-feedback{
@@ -101,6 +113,9 @@ header, div{
 .next-question{
   background-color: inherit;
 }
+
+
+
 
 .submit, .submit-btn, .next-question-btn, .see-results-btn{
   background-color: #ff0;
@@ -120,7 +135,18 @@ header, div{
   width: 100%;
 }
 
-.next-question-btn{
+.submit-btn:hover, .submit-btn:focus, .next-question-btn:hover, .see-results-btn:focus{
+  background-color: #f00;
+  width: 100%;
+  box-shadow: 0 0 5px 5px #ff0;
+}
+
+.submit-btn:active{
+  background-color: #00f;
+  width: 100%;
+}
+
+.next-question-btn, .next-question-btn:active{
   font-size: 45px;
   width: 100%;
   background-color: inherit;
@@ -151,13 +177,16 @@ header{
   width: 60%;
   height: 30%;
   float: left;
+  position: relative;
+  padding: 0 15px;
 }
 
 .question p{
   font-size: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  top: 50%;
+  margin-top: -9%;
+  text-align: center;
 }
 
 .answers{
@@ -297,7 +326,7 @@ main{
   height: 9.090909091%;
   font-family: 'Josefin Slab', serif;
   background-color: #ff0;
-  padding: 20px 0;
+  padding: 0;
   
 }
 
@@ -306,9 +335,19 @@ main{
   background-color: inherit;
   font-size: 50px;
   text-align: center;
-  display: inline-block;
   height: 100%;
-  width: 99%;
+  width: 100%;
+}
+
+.try-again-btn:hover, .try-again-btn:focus{
+	box-shadow: 0 0 5px 5px #ff0;
+	background-color: #f00;
+
+}
+
+.try-again-btn:active{
+	background-color: #00f;
+
 }
 
 .js-try-again{
@@ -394,10 +433,8 @@ main{
 input[type='radio'] {
   -webkit-appearance:none;
   -moz-appearance: none;
-  width:100%;
+  width:78%;
   height:16.6666667%;
-  outline-style :none;
-  outline-color: transparent;
   position: absolute;
   border: none;
   box-shadow:none;
@@ -405,19 +442,20 @@ input[type='radio'] {
 
 input[type='radio']:hover, input[type='radio']:focus {
   background-color: inherit;
-  width: 100%;
+  width: 78%;
   color: #000;
   padding: 8px 0 4px 30px;
   display: inline-block;
   border: 15px solid black;
-  outline: none;
+  outline: #fff;
   border-left: 0;
   border-right: 0;
+  box-shadow: 0 0 5px 5px #ff0;
 }
 
 input[type='radio']:checked{
   background-color: inherit;
-  width: 100%;
+  width: 78%;
   color: #000;
   padding: 8px 0 4px 30px;
   display: inline-block;
