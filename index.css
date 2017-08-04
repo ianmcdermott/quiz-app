@@ -15,6 +15,25 @@ body{
 
 }
 
+.question{
+  width: 60%;
+  height: 30%;
+  float: left;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.question p{
+  font-size: 300%;
+  text-align: center;
+  height: 100%;
+  background-position: center center;
+  padding-top: 10px;
+}
+
 .final-page div{
   float: left;
 }
@@ -173,21 +192,9 @@ header{
 
 }
 
-.question{
-  width: 60%;
-  height: 30%;
-  float: left;
-  position: relative;
-  padding: 0 15px;
-}
 
-.question p{
-  font-size: 50px;
-  position: relative;
-  top: 50%;
-  margin-top: -9git%;
-  text-align: center;
-}
+
+
 
 .answers{
   width: 80%;

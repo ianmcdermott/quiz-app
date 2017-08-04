@@ -47,7 +47,7 @@ const INFO = [
               "Hungary"],
    correctIndex : 0},
    
-  {question      :  "The artistic philosophy that formed a basis for the De Stijl movement’s work is known as:", 
+  {question      :  "The artistic philosophy that formed a basis for De Stijl’s work is known as:", 
    answer:       ["neoplasticism",
               "neoplatonism",
               "neologism",
