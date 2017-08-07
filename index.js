@@ -274,19 +274,22 @@ function updateFeedback(outcome, correctAnswer){
 
 function submitAnswerMessage(){
   //Adds message if player doesn't submit answer
-  $(".js-feedback-div").css("background-color" , "#ff0");
-  $(".js-feedback-div").css("color" , "#000");
-  $(".js-feedback-div").html("<p>Please make a selection</p>");
+  $(".js-feedback-div")
+  	.css("background-color" , "#ff0")
+  	.css("color" , "#000")
+  	.html("<p>Please make a selection</p>");
 }
 
 function renderCorrect(correctAnswer){
   //handles render when user answer is correct
   $("input[name='answer']").prop('checked',false);
-  $(".js-feedback-div").css("background-color" , "#00f");
-  $(".js-feedback-div").css("color" , "#fff");
-  $(".js-feedback-div").html(`Correct Answer:<br>${correctAnswer+1}.`);
-  $(".answers").css("background-color" , "#ff0"); 
-  $(".answer").css("color" , "#ff0");     
+  $(".js-feedback-div")
+	  .css("background-color" , "#00f")
+	  .css("color" , "#fff")
+	  .html(`Correct Answer:<br>${correctAnswer+1}.`);
+  $(".answers")
+  	.css("background-color" , "#ff0") 
+  	.css("color" , "#ff0");     
   $(".js-current-score").html(currentScore);
   $(".answer").removeClass("highlight");
   highlightAnswer(correctAnswer);
@@ -296,11 +299,13 @@ function renderIncorrect(correctAnswer){
   //handles render when user answer is incorrect
   $("input[name='answer']").prop('checked',false);
   $(".answers").css("background-color" , "#f00");
-  $(".js-feedback-div").css("background-color" , "#f00");
-  $(".js-feedback-div").css("color" , "#fff");
+  $(".js-feedback-div")
+  	.css("background-color" , "#f00")
+    .css("color" , "#fff");
   $(".js-feedback-div").html(`Correct Answer:<br>${correctAnswer+1}.`);
-  $(".answer").css("color" , "#f00");     
-  $(".answer").removeClass("highlight");
+  $(".answer")
+  	.css("color" , "#f00")    
+    .removeClass("highlight");
   $(`.answer-${(correctAnswer+1)}`).addClass("highlight"); 
 }
 
